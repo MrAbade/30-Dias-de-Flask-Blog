@@ -1,0 +1,17 @@
+[default]
+FLASK_RUN_PORT=5002
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+FLASK_ENV='development'
+EXTENSIONS = [
+    'blog.ext.database',
+    'blog.ext.migration',
+    'blog.ext.authentication',
+    'blog.blueprints.views'
+]
+
+[development]
+FLASK_ENV='development'
+DEBUG="True"
+
+[production]
+FLASK_ENV="production"

@@ -1,0 +1,11 @@
+# IDE
+.vscode
+
+# ENV
+.env
+.secrets.toml
+
+# PYTHON
+.venv
+**__pycache__
+
