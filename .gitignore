@@ -3,7 +3,7 @@
 
 # ENV
 .env
-.settings.toml
+.secrets.toml
 
 # PYTHON
 .venv

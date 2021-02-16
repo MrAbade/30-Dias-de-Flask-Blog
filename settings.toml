@@ -1,6 +1,6 @@
 [default]
-FLASK_APP='wsgi:application'
 FLASK_RUN_PORT=5002
+SQLALCHEMY_TRACK_MODIFICATIONS = false
 FLASK_ENV='development'
 EXTENSIONS = [
     'blog.ext.database',

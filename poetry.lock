@@ -68,6 +68,24 @@ vault = ["hvac"]
 yaml = ["ruamel.yaml"]
 
 [[package]]
+name = "environs"
+version = "9.3.1"
+description = "simplified environment variable parsing"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+marshmallow = ">=2.7.0"
+python-dotenv = "*"
+
+[package.extras]
+dev = ["pytest", "dj-database-url", "dj-email-url", "django-cache-url", "flake8 (==3.8.4)", "flake8-bugbear (==20.11.1)", "mypy (==0.800)", "pre-commit (>=2.4,<3.0)", "tox"]
+django = ["dj-database-url", "dj-email-url", "django-cache-url"]
+lint = ["flake8 (==3.8.4)", "flake8-bugbear (==20.11.1)", "mypy (==0.800)", "pre-commit (>=2.4,<3.0)"]
+tests = ["pytest", "dj-database-url", "dj-email-url", "django-cache-url"]
+
+[[package]]
 name = "flask"
 version = "1.1.2"
 description = "A simple framework for building complex web applications."
@@ -168,6 +186,20 @@ optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
 
 [[package]]
+name = "marshmallow"
+version = "3.10.0"
+description = "A lightweight library for converting complex datatypes to and from native Python datatypes."
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+dev = ["pytest", "pytz", "simplejson", "mypy (==0.790)", "flake8 (==3.8.4)", "flake8-bugbear (==20.11.1)", "pre-commit (>=2.4,<3.0)", "tox"]
+docs = ["sphinx (==3.3.1)", "sphinx-issues (==1.2.0)", "alabaster (==0.7.12)", "sphinx-version-warning (==1.1.2)", "autodocsumm (==0.2.2)"]
+lint = ["mypy (==0.790)", "flake8 (==3.8.4)", "flake8-bugbear (==20.11.1)", "pre-commit (>=2.4,<3.0)"]
+tests = ["pytest", "pytz", "simplejson"]
+
+[[package]]
 name = "more-itertools"
 version = "8.7.0"
 description = "More routines for operating on iterables, beyond itertools"
@@ -247,6 +279,17 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 six = ">=1.5"
 
 [[package]]
+name = "python-dotenv"
+version = "0.15.0"
+description = "Add .env support to your django/flask apps in development and deployments"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+cli = ["click (>=5.0)"]
+
+[[package]]
 name = "python-editor"
 version = "1.0.4"
 description = "Programmatically open an editor, capture the result."
@@ -305,7 +348,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "28a3c08da80b65f3fd0a7b9ce9b65fc392ccee5556ead5ee8175acbf7948fac8"
+content-hash = "e0b541105e8c422b99a614cb2766ea5402d67390f190af298817db1a1f4a672a"
 
 [metadata.files]
 alembic = [
@@ -330,6 +373,10 @@ colorama = [
 dynaconf = [
     {file = "dynaconf-3.1.2-py2.py3-none-any.whl", hash = "sha256:808adfe964f10695846dbf8dad7632e47fc3bc38860fd1887ed57dddffc4eff2"},
     {file = "dynaconf-3.1.2.tar.gz", hash = "sha256:9b34ab2f811a81755f5eb4beac77a69e1e0887528c7e37fc4bc83fed52dcf502"},
+]
+environs = [
+    {file = "environs-9.3.1-py2.py3-none-any.whl", hash = "sha256:2da44b7c30114415aa858577fa6396ee326fc76a0a60f0f15e8260ba554f19dc"},
+    {file = "environs-9.3.1.tar.gz", hash = "sha256:3f6def554abb5455141b540e6e0b72fda3853404f2b0d31658aab1bf95410db3"},
 ]
 flask = [
     {file = "Flask-1.1.2-py2.py3-none-any.whl", hash = "sha256:8a4fdd8936eba2512e9c85df320a37e694c93945b33ef33c89946a340a238557"},
@@ -393,6 +440,10 @@ markupsafe = [
     {file = "MarkupSafe-1.1.1-cp38-cp38-win_amd64.whl", hash = "sha256:e8313f01ba26fbbe36c7be1966a7b7424942f670f38e666995b88d012765b9be"},
     {file = "MarkupSafe-1.1.1.tar.gz", hash = "sha256:29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"},
 ]
+marshmallow = [
+    {file = "marshmallow-3.10.0-py2.py3-none-any.whl", hash = "sha256:eca81d53aa4aafbc0e20566973d0d2e50ce8bf0ee15165bb799bec0df1e50177"},
+    {file = "marshmallow-3.10.0.tar.gz", hash = "sha256:4ab2fdb7f36eb61c3665da67a7ce281c8900db08d72ba6bf0e695828253581f7"},
+]
 more-itertools = [
     {file = "more-itertools-8.7.0.tar.gz", hash = "sha256:c5d6da9ca3ff65220c3bfd2a8db06d698f05d4d2b9be57e1deb2be5a45019713"},
     {file = "more_itertools-8.7.0-py3-none-any.whl", hash = "sha256:5652a9ac72209ed7df8d9c15daf4e1aa0e3d2ccd3c87f8265a0673cd9cbc9ced"},
@@ -420,6 +471,10 @@ pytest = [
 python-dateutil = [
     {file = "python-dateutil-2.8.1.tar.gz", hash = "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"},
     {file = "python_dateutil-2.8.1-py2.py3-none-any.whl", hash = "sha256:75bb3f31ea686f1197762692a9ee6a7550b59fc6ca3a1f4b5d7e32fb98e2da2a"},
+]
+python-dotenv = [
+    {file = "python-dotenv-0.15.0.tar.gz", hash = "sha256:587825ed60b1711daea4832cf37524dfd404325b7db5e25ebe88c495c9f807a0"},
+    {file = "python_dotenv-0.15.0-py2.py3-none-any.whl", hash = "sha256:0c8d1b80d1a1e91717ea7d526178e3882732420b03f08afea0406db6402e220e"},
 ]
 python-editor = [
     {file = "python-editor-1.0.4.tar.gz", hash = "sha256:51fda6bcc5ddbbb7063b2af7509e43bd84bfc32a4ff71349ec7847713882327b"},
