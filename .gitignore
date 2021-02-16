@@ -1,0 +1,11 @@
+# IDE
+.vscode
+
+# ENV
+.env
+.settings.toml
+
+# PYTHON
+.venv
+**__pycache__
+
